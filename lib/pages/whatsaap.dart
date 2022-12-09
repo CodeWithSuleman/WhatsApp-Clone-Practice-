@@ -1,31 +1,38 @@
 import 'package:flutter/material.dart';
-import 'package:project2/calls_Screen.dart';
-import 'package:project2/chatScreen.dart';
-import 'package:project2/status_Screen.dart';
+import 'package:project2/widgets/calls_screen.dart';
+import 'package:project2/widgets/chat_screen.dart';
+import 'package:project2/widgets/status_screen.dart';
 
-class Whatsaap extends StatefulWidget {
-  const Whatsaap({super.key});
+class WhatsApp extends StatefulWidget {
+  const WhatsApp({super.key});
 
   @override
-  State<Whatsaap> createState() => _WhatsaapState();
+  State<WhatsApp> createState() => _WhatsAppState();
 }
 
-class _WhatsaapState extends State<Whatsaap> {
+class _WhatsAppState extends State<WhatsApp> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
       length: 4,
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.teal,
-          title: const Text("WhatsAAp"),
-          shadowColor: const Color.fromARGB(255, 126, 8, 0),
+          backgroundColor: const Color(0xff006D5B),
+          title: const Text("WhatsApp"),
+          actions: const [
+            Icon(Icons.camera_alt_outlined),
+            SizedBox(width: 18),
+            Icon(Icons.search),
+            SizedBox(width: 15),
+            Icon(Icons.more_vert_outlined),
+            SizedBox(width: 12),
+          ],
           bottom: const TabBar(
-            indicatorColor: Color.fromARGB(255, 250, 246, 246),
+            indicatorColor: Colors.white,
             labelPadding: EdgeInsets.all(4),
             tabs: [
               Tab(
-                child: Icon(Icons.camera_alt),
+                child: Icon(Icons.groups, size: 22),
               ),
               Tab(
                 child: Text(
@@ -47,16 +54,6 @@ class _WhatsaapState extends State<Whatsaap> {
               ),
             ],
           ),
-          actions: const [
-            Icon(Icons.search),
-            SizedBox(
-              width: 30,
-            ),
-            Icon(Icons.more_horiz_outlined),
-            SizedBox(
-              width: 30,
-            ),
-          ],
         ),
         body: const TabBarView(
           children: [
