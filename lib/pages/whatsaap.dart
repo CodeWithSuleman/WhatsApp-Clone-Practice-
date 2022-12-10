@@ -57,7 +57,7 @@ class _WhatsAppState extends State<WhatsApp> {
         ),
         body: const TabBarView(
           children: [
-            Icon(Icons.camera_alt),
+            Icon(Icons.groups),
             ChatScreen(),
             Status(),
             Calls(),
